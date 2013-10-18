@@ -1,3 +1,12 @@
-name: Your New Jekyll Site
-markdown: redcarpet
+markdown: rdiscount
 pygments: true
+permalink: /posts/:title
+rdiscount:
+  extensions: [smart]
+
+name: Yong Heng
+url: http://misterhex.github.io/blog
+description: blog
+twitter: mister_hex
+github: misterhex
+gravatar_url: 
