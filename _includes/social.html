@@ -1,5 +1,23 @@
-Follow me:
 <div id="stalker">
+
+{% if site.theme.email %}
+  <a style="padding-right:5px;" title="Email me {{ site.theme.social.email }}" href="mailto:{{ site.theme.email }}">
+    <i class="icon-envelope-alt"></i>
+  </a>
+  {% endif %}
+
+  {% if site.theme.social.linkedIn %}
+  <a title="{{ site.theme.social.linkedIn }} on LinkedIn" href="{{site.theme.social.linkedIn }}">
+    <i class="icon-linkedin"></i>
+  </a>
+  {% endif %}
+
+  {% if site.theme.social.twitter %}
+  <a title="{{ site.theme.social.twitter }} on Twitter" href="http://twitter.com/{{ site.theme.social.twitter }}">
+    <i class="icon-twitter-sign"></i>
+  </a>
+  {% endif %}
+
   {% if site.theme.social.github %}
   <a title="{{ site.theme.social.github }} on Github" href="http://github.com/{{ site.theme.social.github }}">
     <i class="icon-github-sign"></i>
@@ -10,12 +28,6 @@ Follow me:
   <a title="{{ site.theme.social.hacker_news }} on Hacker News" href="http://news.ycombinator.com/user?id={{site.theme.social.hacker_news }}">
     <i class="icon-sign-blank"></i>
     <span class="icon-overlay icon-hn">Y</span>
-  </a>
-  {% endif %}
-
-  {% if site.theme.social.twitter %}
-  <a title="{{ site.theme.social.twitter }} on Twitter" href="http://twitter.com/{{ site.theme.social.twitter }}">
-    <i class="icon-twitter-sign"></i>
   </a>
   {% endif %}
 

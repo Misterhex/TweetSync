@@ -3,7 +3,7 @@ pygments: false
 url: misterhex.github.io/blog
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore]
-base_dir: /blog
+base_dir: 
 
 # Theme customization - please change from the defaults!
 theme:
@@ -14,6 +14,7 @@ theme:
   social:
     github: misterhex
     twitter: mister_hex
+    linkedIn: http://www.linkedin.com/in/tanyongheng
 
   # "Hi, I'm _______"
   name: Yong Heng
