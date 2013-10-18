@@ -3,7 +3,6 @@ pygments: false
 url: misterhex.github.io
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore]
-base_path: "/blog"
 
 # Theme customization - please change from the defaults!
 theme:
