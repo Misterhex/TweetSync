@@ -4,4 +4,3 @@ title: What-Does-It-Take-To-Be-An-Expert-In-Computer-Programming-via
 categories:
 - tweets
 ---
-What Does It Take To Be An Expert In Computer Programming?  http://t.co/lGlRb80sBC via @forbes
