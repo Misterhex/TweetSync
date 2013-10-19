@@ -4,6 +4,7 @@ url: misterhex.github.io/blog
 lsi: false
 exclude: [LICENSE, CNAME, README.md, .gitignore]
 base_dir: /blog
+baseurl: misterhex.github.io/blog
 
 # Theme customization - please change from the defaults!
 theme:
