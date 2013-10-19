@@ -1,5 +1,8 @@
 ---
 layout: post
-title: hello world
+title: Another sample
+categories:
+- test
 ---
+
 hello world
