@@ -1,0 +1,32 @@
+---
+layout: post
+title: MIT-School-of-Engineering-What-do-Legos-have
+categories:
+- tweets
+---
+*taken from [http://t.co/Sh9xTUEf](http://t.co/Sh9xTUEf)*
+>MIT School of Engineering
+>
+>What do Legos have to do with engineering?
+>
+>What do Legos have to do with engineering?
+>
+>In a word everything
+>
+>When kids open up a new Lego kit, they go right for the instruction book. Moving quickly through the wordless instructions they can turn a large pile of randomlooking plastic shapes into a sleek space cruiser or a scene from a popular movie. After the tattered instructions have vanished and the original box has been whisked away, kids get creativea medieval castle becomes a stoneage helicopter, a Jedi fighter prowls his beat in a police car, the elements of a martial arts dojo are intermingled with a pirate ship 
+>
+>In both intended and unintended contexts and uses, Lego lets kids exercise creativity and learn some fundamentals of engineeringalmost in spite of themselves.Math and physics concepts are built into every Lego project, says Tiffany Tseng , a graduate researcher in the MIT Media Lab Lifelong Kindergarten group. Kids can build whatevers in their imagination and, at the same time, develop spatial reasoning and learn about structural integrity, design, and a practical sense of geometry. 
+>
+>Like many future engineers, Tseng spent countless hours as a child creating whole communities with Legos, along with stories about the people and animals that populated her little towns. Legos are a good introduction to communicating ideas with physical objects, she says. Putting things together and taking them apart got me interested in how things work, and by the time I was an undergraduate, I knew I wanted to be an engineer. 
+>
+>That goal led to her current work in Lifelong Kindergarten, which partners with Lego to develop innovative tools for kids of all ages. In the elementary grades, kids use the groups WeDo s draganddrop software to integrate light sensors and tilt sensors to create a Lego monkey that moves its arms or an alligator that opens and closes its mouth. By the time theyre in middle school, theyre ready to use Lego Mindstorm s microcomputer brick and software to build their own robot, and the more complex Technic kit teaches high schoolers the fundamentals of gears and torque as they build tow trucks, cranes, and jet planes that really fly. 
+>
+>Tseng and her group are currently at work on the next generation of Scratch, in which kids create interactive stories and games using a draganddrop programming language based on the stacking patterns of actual Lego bricks. Kids share their projects on the Scratch website and learn from each other about their process in creating animations, games, and personal map generators. 
+>
+>Every Lego project is a pathway into engineering, says Tseng. You arent necessarily thinking about the pedagogical concepts, but youre applying them while you play. 
+>
+>Incoming MIT students often stop by the Media Lab to share their childhood memories of playing with Scratch and Mindstorms. They visit the lab and tell us how Lego inspired them to study engineering, says Tseng. Theyre excited about applying the same principles they used in their Lego models to designs they plan to create as adult engineers.Sarah Jensen 
+>
+>Thanks to Blythe Namukara, 11, from Bourne, Mass., for this question.
+>
+>
