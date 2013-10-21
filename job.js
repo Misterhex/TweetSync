@@ -6,8 +6,6 @@ var path = require('path')
 var Boilerpipe = require('boilerpipe')
 
 var secret = require('./secret.json')
-console.log(secret)
-
 
 var T = new Twit({
     consumer_key:         secret.consumer_key
@@ -16,13 +14,20 @@ var T = new Twit({
   , access_token_secret:  secret.access_token_secret
 })
 
+var stream = T.stream('user')
+
+stream.on('tweet', function (tweet) {
+  if (tweet.user.screen_name == 'mister_hex')
+  {
+    writeToMarkDown(tweet)
+  }
+})
+
 Array.prototype.insert = function (index, item) {
   this.splice(index, 0, item);
 };
 
-//
-//  search twitter for all tweets containing the word 'banana' since Nov. 11, 2011
-//
+
 T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, function(err, reply) {
 
   if (err)
@@ -31,13 +36,13 @@ T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, func
   console.log('processing ' + reply.length + 'tweets ...')
 
   reply.forEach(function(tweet){
-    var fileName = getMarkDownFileName(tweet)
-    var content = writeMarkDownFileContent(fileName,tweet)
+    writeToMarkDown(tweet)
   });
 })
 
-function writeMarkDownFileContent(fileName, tweet)
+function writeToMarkDown(tweet)
 {
+  var fileName = getMarkDownFileName(tweet)
   var title = guessTitle(tweet.text)
 
   var urlPattern = 'http[s]?://[^\s<>"]+|www\.[^\s<>"]+'
@@ -90,11 +95,23 @@ function writeMarkDownFileContent(fileName, tweet)
 
       var content = contentArr.join("\n");
 
-      fs.writeFile(path.join(__dirname ,'/_posts',fileName), content, function (err) {
-        if (err) console.log(err)
-        console.log(fileName +' saved!');
+      var filePath = path.join(__dirname ,'/_posts',fileName);
+      
+      fs.exists(filePath, function(exists) 
+      {
+        if (!exists) 
+        {
+          fs.writeFile(filePath, content, function (err) 
+          {
+            if (err) console.log(err)
+            console.log(fileName +' saved!');
+          });
+        }
+        else
+        {
+          console.log(fileName + ' already processed before');
+        }
       });
-
     });
   }
 }

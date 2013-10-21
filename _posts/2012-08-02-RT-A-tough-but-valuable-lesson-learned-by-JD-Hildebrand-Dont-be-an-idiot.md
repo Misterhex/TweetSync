@@ -5,6 +5,10 @@ categories:
 - tweets
 ---
 *taken from [http://t.co/Lfeb0AE8](http://t.co/Lfeb0AE8)*
+>Perfecto Mobile announces MobileCloud Express, the lightweight version of its MobileCloud Platform for easy mobile application testing SD Times Newswire All the benefits of automated testing on an internal real device cloud is packaged for teams Read More...
+>
+>10212013 1118 AM
+>
 >New Telerik DevTools release delivers major mobile, cloud and crossplatform enhancements SD Times Newswire Telerik today announced the Q3 release of its leading .NET development tools suite Read More...
 >
 >10182013 0938 AM
@@ -16,10 +20,6 @@ categories:
 >DBmaestro releases Teamwork V 3.7 with Oracle SQL Developer Extension SD Times Newswire New version enhances the automation process and robustness of the system Read More...
 >
 >10172013 0311 PM
->
->New study Enterprise application teams struggle to keep up with only 39 delivering ontime, onbudget SD Times Newswire Survey of IT decision makers commissioned by EffectiveUI finds complexity is the main obstacle internal teams face Read More...
->
->10172013 1135 AM
 >
 >Believe it or not, public clouds are more secure than private clouds Hassan Bawab The maintenance that goes into public clouds makes them more reliable and harder to compromise Read More...
 >

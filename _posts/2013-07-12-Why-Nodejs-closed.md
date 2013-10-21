@@ -7,7 +7,7 @@ categories:
 *taken from [http://t.co/ZQrQ6uZNK6](http://t.co/ZQrQ6uZNK6)*
 >up vote 510 down vote favorite
 >
->543
+>550
 >
 >I dont fully get what Node.js is all about. Maybe its because I am mainly a web based business application developer. What is it and what is the use of it?
 >

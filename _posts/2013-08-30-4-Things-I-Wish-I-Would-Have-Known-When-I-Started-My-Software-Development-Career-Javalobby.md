@@ -7,13 +7,13 @@ categories:
 *taken from [http://t.co/t3W26v8MmV](http://t.co/t3W26v8MmV)*
 >jsonmez
 >
->John Sonmez is a Pluralsight author of over 25 courses spanning a wide range of topics from mobile development to IoC containers. He is a frequent guest on podcasts such as DotNetRocks and Hanselminutes. John has created applications for iOS, Android and Windows Phone 7 using native tools, HTML5, and just about every cross platform solution available today. He has a passion for Agile development and is engaged in a personal crusade to make the complex simple.  John is a DZone MVB and is not an employee of DZone and has posted 39 posts at DZone. You can read more from them at their website. View Full User Profile
+>John Sonmez is a Pluralsight author of over 25 courses spanning a wide range of topics from mobile development to IoC containers. He is a frequent guest on podcasts such as DotNetRocks and Hanselminutes. John has created applications for iOS, Android and Windows Phone 7 using native tools, HTML5, and just about every cross platform solution available today. He has a passion for Agile development and is engaged in a personal crusade to make the complex simple.  John is a DZone MVB and is not an employee of DZone and has posted 40 posts at DZone. You can read more from them at their website. View Full User Profile
 >
 >4 Things I Wish I Would Have Known When I Started My Software Development Career
 >
 >08.21.2013
 >
->ScaleBase Overview  Your complete scale out partner
+>Cassandra in the Netflix Architecture
 >
 >My software development career began about 15 years ago.
 >

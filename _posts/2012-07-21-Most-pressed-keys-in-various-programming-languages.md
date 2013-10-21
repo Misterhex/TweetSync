@@ -13,7 +13,7 @@ categories:
 >
 >07.12.2012
 >
->Collaborative Filtering at Scale
+>Manage Java Applications in an Open Hybrid Cloud
 >
 >I switch between programming languages quite a bit I often wondered  what happens when having to deal with the different syntaxes, does the  syntax allow you to be more expressive or faster at coding in one  language or another. I dont really know about that but what I do know  what keys are pressed when writing with different programming  languages.
 >

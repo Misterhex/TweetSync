@@ -13,7 +13,7 @@ categories:
 >
 >01.02.2013
 >
->ActuateOne for OEMs
+>Collaborative Filtering at Scale
 >
 >Introduction
 >
