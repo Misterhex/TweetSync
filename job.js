@@ -2,6 +2,7 @@ var Twit = require('twit')
 var moment = require('moment')
 var fs = require('fs')
 var path = require('path')
+var Rx = require('rx')
 
 var Boilerpipe = require('boilerpipe')
 
@@ -14,31 +15,26 @@ var T = new Twit({
   , access_token_secret:  secret.access_token_secret
 })
 
-var stream = T.stream('user')
-
-stream.on('tweet', function (tweet) {
-  if (tweet.user.screen_name == 'mister_hex')
-  {
-    writeToMarkDown(tweet)
-  }
-})
-
 Array.prototype.insert = function (index, item) {
   this.splice(index, 0, item);
 };
 
-
-T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, function(err, reply) {
+T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, function(err, tweets) {
 
   if (err)
     console.log(err)
 
-  console.log('processing ' + reply.length + 'tweets ...')
+  var bulkCall = Rx.Observable.fromArray(tweets);
 
-  reply.forEach(function(tweet){
-    writeToMarkDown(tweet)
-  });
-})
+  var stream = T.stream('user')
+  var tweetStream = Rx.Observable.fromCallback(stream.on);
+  var tweetStreamObservable = tweetStream('tweet');
+
+  bulkCall.merge(tweetStreamObservable)
+  .where(function(tweet){return tweet.user.screen_name == 'mister_hex'})
+  .subscribe(function (tweet) {console.log(tweet)});
+
+});
 
 function writeToMarkDown(tweet)
 {

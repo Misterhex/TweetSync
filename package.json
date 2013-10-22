@@ -1,0 +1,13 @@
+{ 
+	"name": "job",
+  	"description": "auto tweet to markdown to github pages",
+  	"version": "0.0.1",
+	"dependencies" :
+	{ 
+		"Twit" : "latest",
+	    "moment" : "latest",
+	    "rx" : "latest",
+	    "boilerpipe" : "latest"
+  	},
+  	"private": true
+}
