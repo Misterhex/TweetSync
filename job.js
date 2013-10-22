@@ -24,17 +24,32 @@ T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, func
   if (err)
     console.log(err)
 
-  var bulkCall = Rx.Observable.fromArray(tweets);
+  
+  var published = Rx.Observable.create(function (observer) {
+    var stream = T.stream('user')
+    
+    stream.on('tweet', function (tweet) {
+      observer.onNext(tweet);
+    })
 
-  var stream = T.stream('user')
-  var tweetStream = Rx.Observable.fromCallback(stream.on);
-  var tweetStreamObservable = tweetStream('tweet');
-
-  bulkCall.merge(tweetStreamObservable)
+    tweets.forEach(function (tweet) {
+      observer.onNext(tweet);
+    })
+  })
   .where(function(tweet){return tweet.user.screen_name == 'mister_hex'})
-  .subscribe(function (tweet) {console.log(tweet)});
+  .publish();
+
+  published.throttle(120000).subscribe(function(_){ gitCommit()})
+  published.subscribe(function (tweet) {writeToMarkDown(tweet)})
+
+  published.connect()
 
 });
+
+function gitCommit()
+{
+  console.log('commited to git')
+}
 
 function writeToMarkDown(tweet)
 {
