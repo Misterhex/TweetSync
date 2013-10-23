@@ -25,7 +25,7 @@ T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, func
     console.log(err)
 
   
-  var published = Rx.Observable.create(function (observer) {
+    var published = Rx.Observable.create(function (observer) {
     var stream = T.stream('user')
     
     stream.on('tweet', function (tweet) {
