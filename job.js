@@ -48,6 +48,18 @@ T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, func
 
 function gitCommit()
 {
+  var exec = require('child_process').exec,
+      child;
+
+  child = exec('git add -A',
+    function (error, stdout, stderr) {
+      console.log('stdout: ' + stdout);
+      console.log('stderr: ' + stderr);
+      if (error !== null) {
+        console.log('exec error: ' + error);
+      }
+  });
+
   console.log('commited to git')
 }
 
