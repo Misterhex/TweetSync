@@ -3,17 +3,15 @@ var moment = require('moment')
 var fs = require('fs')
 var path = require('path')
 var Rx = require('rx')
-
 var Boilerpipe = require('boilerpipe')
-
 var secret = require('./secret.json')
-
 var T = new Twit({
     consumer_key:         secret.consumer_key
   , consumer_secret:      secret.consumer_secret
   , access_token:         secret.access_token
   , access_token_secret:  secret.access_token_secret
 })
+var exec = require('child_process').exec
 
 Array.prototype.insert = function (index, item) {
   this.splice(index, 0, item);
@@ -24,7 +22,6 @@ T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, func
   if (err)
     console.log(err)
 
-  
     var published = Rx.Observable.create(function (observer) {
     var stream = T.stream('user')
     
@@ -48,19 +45,19 @@ T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, func
 
 function gitCommit()
 {
-  var exec = require('child_process').exec,
-      child;
-
-  child = exec('git add -A',
+  exec('git add -A',
     function (error, stdout, stderr) {
-      console.log('stdout: ' + stdout);
-      console.log('stderr: ' + stderr);
-      if (error !== null) {
-        console.log('exec error: ' + error);
-      }
+      console.log(stdout);
+      exec('git commit -m updatesCommit',function (error, stdout, stderr) 
+      {
+        console.log(stdout);
+        exec('git push',function (error, stdout, stderr) 
+        {
+          console.log(stdout);
+          console.log('pushed updates to git.')
+        })
+      })
   });
-
-  console.log('commited to git')
 }
 
 function writeToMarkDown(tweet)
