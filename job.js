@@ -97,7 +97,7 @@ function writeToMarkDown(tweet)
       if (text)
       {
         text = text.split('\n')
-        .map(function(s){return s.replace(/[^a-zA-Z0-9,.!?'- ]{1,}/g,"")})
+        .map(function(s){return s.replace(/[^a-zA-Z0-9,.!?' ]{1,}/g,"")})
         .join('\n\n')
         .split('\n')
         .join('\n')

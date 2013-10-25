@@ -1,0 +1,27 @@
+---
+layout: post
+title: programming is all about passion programming is all
+categories:
+- tweets
+---
+*taken from [http://t.co/Ibq4y9DC71](http://t.co/Ibq4y9DC71)*
+Programming Is All About Passion
+
+Programming is all about passion.
+
+Yes, you can be a programmer and get your job done without actually loving your job. You can clock in 9 am and clock out 5 pm and collect your salary at the end of the month, day in and day out but you don't enjoy the job at all. You can even climb up the management ladder and collect a far fatter paycheck after you grow tired of the technical things. Oh no, moving up the management ladder is the way to go besides switching track, of course if you don't love programming.
+
+But in a field that is so dynamic, competitive and geeky, it is hard to stand out among the crowd without burning passion. Programming is like sports, or money management, or scientific research, where individual talent matters the most. Not just individual talent, but also the effort. In those fields, there is no such thing as a secondplace winner. Either you are the best, or you are a nobody. Talent is a flunky thing, one day you feel very talented and you win, but on another day your talent, or luck desert you and you lose. You have to make up the fluctuation in talent by putting in a lot of sweat, tears and even blood.
+
+Tiger Woods started playing golf at two and put in don'tknowhowmanyhours in practicing the sport. All the athletes I know of spend a major proportion of their time practicing, practicing, practicing. Without passion there is really no way to practice, practice and practice. There is no way to becoming a pro. And the pros don't just settle for the average, they aim for the best, the perfection. That's the way to survive.
+
+Programming is competitive. Every few years new technologies come out, replacing old stuffs. Every few years new methodologies purposed. There are constantly new frameworks, techniques that you have to master. Even the programming domain is changing as well. In 60s and 70s we had mainframe computing where all you could find were number crunching jobs. In 80s we had Mac and Windows bursting on the scene and suddenly, the choices for programmers widened. Instead of crunching numbers all the time, you could now write interactive, bouncing applications with dazzling GUIs. Then in 90s World Wide Web was born, and that required expertise in network programming, not to mentioned web apps. In 2000s, web apps are still the mainstream, except that they grow in sophistication and in different tool sets.
+
+Programming languages and paradigm change also. 70s was dominated by Fortran, COBOL and procedural programming. In 80s we saw the steady rise of C and the OOP concepts. Learning procedural programming was hard enough. But when you wanted to learn OOP afterwards, it was even harder because OOP was a completely different paradigm than procedural programming. There isn't a single field that change as fast as programming field. Without passion it is literally impossible to survive a few revolutions and master vastly different techniques.
+
+A person who is content with his day to day job and doesn't bother to learn anything new on his spare time is unlikely to catch on the new technologies and the new revolutions. Overt the time his skill will become obselete, or his expertise domain will shrink to an extent that he is no longer that valuable on the job market  Yes, I know, I know, hiring shouldn't be all about experience and skill sets,  but unfortunately, the managers, or the recruiters think otherwise . Learning new stuff requires adventurous spirit, sharp minds and burning passion. After a day of hard work, after so much time writing code in the office, do you still want to write more code, in a different language that you are unfamiliar with when your wife is calling out for you and your brain is tired? Most people don't. And those who do are those who are passionate.
+
+It is those passionate ones who will stand out from the crowd.
+
+Posted by Soon Hui at 1028 PM 
+

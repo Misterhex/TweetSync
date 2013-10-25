@@ -1,0 +1,107 @@
+---
+layout: post
+title: using ienumerator and ienumerable in the net framework
+categories:
+- tweets
+---
+*taken from [http://t.co/WUeo49nz](http://t.co/WUeo49nz)*
+Using IEnumerator and IEnumerable in the .NET Framework
+
+By Colin Angus Mackay , 3 Dec 2003
+
+ 4.53 24 votes
+
+Add a reason or comment to your vote x
+
+Votes of 3 or less require a comment
+
+Download source files  6.59 Kb
+
+Introduction
+
+This article discusses the IEnumerator and IEnumerable interfaces in the .NET framework. Enumerators can be an incredibly powerful way of iterating through data. I had noticed that the MSDN library didn't contain many examples on the use of enumerators, and I felt that they are a too useful and powerful construction to have, without sufficient examples on their use.
+
+Background
+
+I first came across the concept of iterators from another object oriented language called Magik. In that language it is possible to create an iter method which can be used in for loops in a similar way to the C foreach. I wanted to be able to recreate some of the very powerful iterators I had used in Magik in C.
+
+Iterators are useful in a variety of situations, e.g. when you want to traverse a list in different ways, to be able to traverse the contents of an object without exposing the internal representation, or to provide a uniform way of traversing different aggregate structures.
+
+Iterators are also very useful in situations where the amount of data is not easily known at the start of the process. Or where the data is coming from an outside, possibly asynchronous source  In this situation the use of an iterator can make, the method using the iterator, considerably easier to read than, trying to code it into the method itself, as all the logic for accessing the data is in the iterator.
+
+A further common usage that I have come across is the deserialisation of a file. The iterator reads the file, calls the necessary factory methodsand passes back objects that ithavebeenconstructed based on data in the file.
+
+Using the code
+
+In the sample code, I have presented a small problem, enumerating through the cards in a standard deck of cards, with the Jokers removed and shown two ways in which an enumerator can be used in the .NET Framework. First, using a while loop accessing the IEnumerator based object directly, and second, using a foreach loop accessing the enumerator through the IEnumerable interface.
+
+This first enumerator class, suitsEnumerator, will return each of the suits in a deck of cards.
+
+First notice that the class uses the IEnumerator interface. This is the base interface for all enumerators. Also note that to use this interface a reference to System.Collections needs to be included.
+
+using System.Collections public class suitsEnumerator  IEnumerator 
+
+The following code sets up the class. As this is a very simple enumeration, I have placed all the values to be enumerated in a simple array. I have also initialised mnCurr to the index of the current element. As enumerators are always initially pointed to just before the first element, this index is set to 1. The Reset method also sets the current index back to 1.
+
+private static string suits  Hearts,Spades,Diamonds,Clubs private int mnCurr  1 public suitsEnumerator  public void Reset      mnCurr  1 
+
+The MoveNext method, as the name implies, moves the enumerator on to the next element. The return value indicates whether there is more data or not, and only when the thing being iterated over is exhausted will it return false.
+
+In this example the method only updates the index, but in other implementations, the enumerator class may have a member variable to hold the current value if the lookup is complex.
+
+public bool MoveNext      mnCurr if mnCurr  4 return false return true 
+
+Finally, there is the Current property, which returns the current element. In this simple implementation a check is done to ensure the index is valid and the element at that index of the array is returned. If the index is invalid then an exception is raised.
+
+As Current does not move the enumerator to the next element, it will always return the same value until either MoveNext or Reset is called.
+
+public object Current      get  if mnCurr0 throw new InvalidOperationException if mnCurr3 throw new InvalidOperationException return suitsmnCurr               
+
+This is a very simple enumerator that can be used quite easily like the example below
+
+Console.WriteLineThe suits are IEnumerator suits  new suitsEnumerator whilesuits.MoveNext     Console.WriteLinesuits.Current
+
+In the provided code, there is another similar IEnumerator derived class called cardValuesEnumerator that contains each possible value that a card may contain.
+
+The second part of using enumerators in the .NET Framework is the IEnumerable interface. It provides the method GetEnumerator with an IEnumerator as a return value.Also the IEnumerable interface can be found in the System.Collections namespace.
+
+public class deckOfCards  IEnumerable      ... public IEnumerator GetEnumerator      return new deckOfCardsEnumerator          ... 
+
+The IEnumerable interface is used on classes that are to be used with the foreach statement. The enumerator returned from the GetEnumerator method is used by the foreach statement.
+
+Console.WriteLineThe deck of cards contains foreachobject card in new deckOfCards     Console.WriteLinecard
+
+Normally the class inheriting from IEnumerable will not be the same class that inherits from the IEnumerator interface. It can do, however if it is then the class will not be thread safe, nor can younest twoor more iterations of the elements of the same classwithin each other.In otherwords the following will notbe possible
+
+foreachobject obj1 in MyCollection   foreachobject obj2 in MyCollection     Do something   
+
+If you can assert that there will only ever be one thread and never any nesting then the the collection class with the IEnumerator interface can also have the IEnumerable interface with the GetEnumerator method returning this.
+
+Exposing More Than One Enumerator
+
+If you have a collection that could expose many ways of iterating through its contents you may like to create a number of IEnumerator classes. If you do then the GetEnumerator on the collection class may become redundant unless you plan to return somedefault enumerator.In this case a class with the IEnumerable and IEnumerator interfaces can be created for each type of iteration so that the return value from the original collection class can be dropped directly into a foreach statement.
+
+The following code snipped shows an example of a class exposing many enumerators that can be easily used in a foreach statement
+
+class SuperCollection   All the ususal collection collection methods go here public ForwardEnumeration InAscendingOrder   get  return new ForwardEnumerationsome args      public ReverseEnumeration InDescendingOrder   get  return new ReverseEnumerationsome args       class ForwardEnumeration  IEnumerator, IEnumerable  public ForwardEnumerationsome args    Constructor Logic Here   From the IEnumerable Interface public IEnumerator GetEnumerator   return this    Put IEnumerator logic here  class ReverseEnumeration  IEnumerator, IEnumerable  public ReverseEnumerationsome args    Constructor logic here   From the IEnumerable Interface public IEnumerator GetEnumerator   return this    Put IEnumerator logic here  Using the above classes public void SomeMethodSuperCollection manyThings  foreachobject item in manyThings.InAscendingOrder    Do something with the each object  foreachobject item in manyThings.InDescendingOrder    Do something with each object  
+
+In many situations this may produce a cleaner construction than implementing it as two classes. e.g. Where the IEnumerable based class only serves to construct and return the IEnumerator based class.
+
+Personally, I would have also liked the foreach to permit the direct use of a IEnumerator based class, but if tried then the compiler will issue the error
+
+foreach statement cannot operate on variables of  type 'class name' because 'class name'  does not contain a definition for  'GetEnumerator', or it is inaccessible.
+
+Points of Interest
+
+The biggest difference between the C implementation, which is essentially a form of the iterator pattern as found in book mentioned below, and the Magik implementation is that, in Magik a method can be attributed as an iter method, whereas in C the enumerator is a different class. In C this can pose additional challenges, for one the iterator may need to have access to the internal structure of the thing being enumerated.
+
+If you want to read more about iterators, and other design patterns, I recommend the book mentioned below. It is an excellent reference of design patterns and also won a Software Development Magazine Productivity Award.
+
+If you have any questions please feel free to contact me.
+
+Bibliography
+
+Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides. Design Patterns Elements of Reusable ObjectOriented Software. AddisonWesley, Reading, MA, USA, 1994
+
+History
+

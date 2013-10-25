@@ -1,0 +1,29 @@
+---
+layout: post
+title: what is linq to events aka rx framework
+categories:
+- tweets
+---
+*taken from [http://t.co/NrCJ0BRo](http://t.co/NrCJ0BRo)*
+What is LINQ to Events a.k.a RX Framework?
+
+ANOOP MADHUSUDANAN
+
+Sunday, February 07, 2010   Tags .NET 4.0 , .NET Rx , Back To Basics , CSharp
+
+I received a mail some time back, asking me to clarify in simple words the concept of LINQ to Events. This is a quick post on LINQ to Events a.k.a the RX Framework, and the objective of this post is to high light some of my previous posts on the same topic.
+
+NET Rx team this is not an official name found that any push sequence events, callbacks can be viewed as a pull sequence as we normally do while accessing enumerables as well  or they are Dual in nature. In short observerobservable pattern is the dual of enumeration pattern.
+
+So what is cool about about this duality?
+
+Anything you do with Pull sequences read declarative style coding is applicable to push sequences as well. Here are few aspects. You can create Observables from existing events and then use them as first class citizens in .NET  i.e, you may create an observable from an event, and expose the same as a property.
+
+As IObservable is the mathematical dual of IEnumerable, .NET Rx facilitates LINQ over push sequences like Events, much like LINQ over IEnumerables
+
+It gives greater freedom to compose new events  you can create specific events out of general events.
+
+.NET Rx introduces two interfaces, IObservable and IObserver that provides an alternative to using input and output adapters as the producer and consumer of event sources and sinks and this will soon become the defacto for writing asynchronous code in a declarative manner. Here is a quick example.
+
+You may go through my previous posts as well to get the head and tail in detail. Also have a look at the related source code as well.
+
