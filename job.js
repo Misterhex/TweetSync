@@ -36,7 +36,7 @@ T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, func
   .where(function(tweet){return tweet.user.screen_name == 'mister_hex'})
   .publish();
 
-  published.throttle(5000).subscribe(function(_){ gitCommit()})
+  published.throttle(15000).subscribe(function(_){ gitCommit()})
   published.subscribe(function (tweet) { if (tweet && tweet.text) {writeToMarkDown(tweet)}})
 
   published.connect()
