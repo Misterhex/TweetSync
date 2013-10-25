@@ -37,7 +37,7 @@ T.get('statuses/user_timeline', { screen_name : 'mister_hex', count: 200 }, func
   .publish();
 
   published.throttle(120000).subscribe(function(_){ gitCommit()})
-  published.subscribe(function (tweet) {writeToMarkDown(tweet)})
+  published.subscribe(function (tweet) { if (tweet && tweet.text) {writeToMarkDown(tweet)}})
 
   published.connect()
 
@@ -68,7 +68,7 @@ function writeToMarkDown(tweet)
   var urlPattern = 'http[s]?://[^\s<>"]+|www\.[^\s<>"]+'
   var extractedUrls = tweet.text.match(urlPattern)
 
-  if (extractedUrls && extractedUrls[0])
+  if (tweet && tweet.text && extractedUrls && extractedUrls[0])
   {
     var extractedUrl = extractedUrls[0]
     if (extractedUrl.split(' ').length > 0)
@@ -84,7 +84,7 @@ function writeToMarkDown(tweet)
 
     boilerpipe.getText(function(err, text) {
 
-      if (!title)
+      if (!title && text)
       { 
         title = guessTitle(text).split('-').slice(0,8).join('-')
 
@@ -94,44 +94,49 @@ function writeToMarkDown(tweet)
         }
       }
 
-      text = text.split('\n')
-      .map(function(s){return s.replace(/[^a-zA-Z0-9,.!? ]{1,}/g,"")})
-      .join('\n\n')
-      .split('\n')
-      .map(function(s){return '>' + s})
-      .join('\n')
-
-      var text = "*taken from [" + extractedUrl +"](" + extractedUrl +")*" + '\n' + text
-
-      var contentArr = [];
-      contentArr.push(
-      "---",
-      "layout: post",
-      "title: " + title,
-      "categories:",
-      "- tweets",
-      "---",
-      text)
-
-      var content = contentArr.join("\n");
-
-      var filePath = path.join(__dirname ,'/_posts',fileName);
-      
-      fs.exists(filePath, function(exists) 
+      if (text)
       {
-        if (!exists) 
+        text = text.split('\n')
+        .map(function(s){return s.replace(/[^a-zA-Z0-9,.!? ]{1,}/g,"")})
+        .join('\n\n')
+        .split('\n')
+        .map(function(s){return '>' + s})
+        .join('\n')
+
+        var text = "*taken from [" + extractedUrl +"](" + extractedUrl +")*" + '\n' + text
+
+        var contentArr = [];
+        contentArr.push(
+        "---",
+        "layout: post",
+        "title: " + title,
+        "categories:",
+        "- tweets",
+        "---",
+        text)
+
+        var content = contentArr.join("\n");
+
+        var filePath = path.join(__dirname ,'/_posts',fileName);
+        
+        fs.exists(filePath, function(exists) 
         {
-          fs.writeFile(filePath, content, function (err) 
+          if (!exists) 
           {
-            if (err) console.log(err)
-            console.log(fileName +' saved!');
-          });
-        }
-        else
-        {
-          console.log(fileName + ' already processed before');
-        }
-      });
+            fs.writeFile(filePath, content, function (err) 
+            {
+              if (err) console.log(err)
+              console.log(fileName +' saved!');
+            });
+          }
+          else
+          {
+            console.log(fileName + ' already processed before');
+          }
+        });
+      }
+
+      
     });
   }
 }
