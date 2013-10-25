@@ -97,10 +97,9 @@ function writeToMarkDown(tweet)
       if (text)
       {
         text = text.split('\n')
-        .map(function(s){return s.replace(/[^a-zA-Z0-9,.!? ]{1,}/g,"")})
+        .map(function(s){return s.replace(/[^a-zA-Z0-9,.!?'- ]{1,}/g,"")})
         .join('\n\n')
         .split('\n')
-        .map(function(s){return '>' + s})
         .join('\n')
 
         var text = "*taken from [" + extractedUrl +"](" + extractedUrl +")*" + '\n' + text
@@ -109,7 +108,7 @@ function writeToMarkDown(tweet)
         contentArr.push(
         "---",
         "layout: post",
-        "title: " + title,
+        "title: " + title.replace(/[-]{1,}/g,"").toLowerCase(),
         "categories:",
         "- tweets",
         "---",
