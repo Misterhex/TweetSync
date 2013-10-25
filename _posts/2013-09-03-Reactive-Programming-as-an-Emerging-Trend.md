@@ -9,7 +9,7 @@ You are here InfoQ Homepage News Reactive Programming as an Emerging Trend
 
 Reactive Programming as an Emerging Trend
 
-by Dio Synodinos on     Aug 28, 2013 
+by Dio Synodinos on Aug 28, 2013 
 
 Share
 

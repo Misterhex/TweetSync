@@ -86,7 +86,7 @@ function writeToMarkDown(tweet)
 
       if (!title && text)
       { 
-        title = guessTitle(text).split('-').slice(0,8).join('-')
+        title = guessTitle(text.split('\n')[0]).split('-').join('-')
 
         if (fileName.indexOf('untitled') != -1)
         {
