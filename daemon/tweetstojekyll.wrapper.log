@@ -10,3 +10,11 @@
 2013-10-25 14:41:49 - Finished tweetstojekyll.exe
 2013-10-25 14:50:25 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\tan.yong.heng\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js" -f "C:\misterhex\blog\job.js" -l "TweetsToJekyll" -g 0.25 -w 1 -r 3 -a n
 2013-10-25 14:50:25 - Started 167364
+2013-10-25 15:24:49 - Stopping tweetstojekyll.exe
+2013-10-25 15:24:49 - ProcessKill 167364
+2013-10-25 15:24:49 - Finished tweetstojekyll.exe
+2013-10-25 15:24:50 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\tan.yong.heng\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js" -f "C:\misterhex\blog\job.js" -l "TweetsToJekyll" -g 0.25 -w 1 -r 3 -a n
+2013-10-25 15:24:50 - Started 166812
+2013-10-25 15:50:16 - Stopping tweetstojekyll.exe
+2013-10-25 15:50:16 - ProcessKill 166812
+2013-10-25 15:50:16 - Finished tweetstojekyll.exe
