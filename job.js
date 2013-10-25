@@ -108,7 +108,7 @@ function writeToMarkDown(tweet)
         contentArr.push(
         "---",
         "layout: post",
-        "title: " + title.replace(/[-]{1,}/g,"").toLowerCase(),
+        "title: " + title.replace(/[-]{1,}/g," ").toLowerCase(),
         "categories:",
         "- tweets",
         "---",
