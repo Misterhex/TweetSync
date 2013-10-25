@@ -1,0 +1,10 @@
+2013-10-25 14:27:57 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\tan.yong.heng\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js" -f "C:\misterhex\blog\job.js" -l "TweetsToJekyll" -g 0.25 -w 1 -r 3 -a n
+2013-10-25 14:27:57 - Started 161808
+2013-10-25 14:37:15 - Stopping tweetstojekyll.exe
+2013-10-25 14:37:15 - ProcessKill 161808
+2013-10-25 14:37:15 - Finished tweetstojekyll.exe
+2013-10-25 14:37:17 - Starting C:\Program Files\nodejs\node.exe --harmony "C:\Users\tan.yong.heng\AppData\Roaming\npm\node_modules\node-windows\lib\wrapper.js" -f "C:\misterhex\blog\job.js" -l "TweetsToJekyll" -g 0.25 -w 1 -r 3 -a n
+2013-10-25 14:37:17 - Started 167572
+2013-10-25 14:41:49 - Stopping tweetstojekyll.exe
+2013-10-25 14:41:49 - ProcessKill 167572
+2013-10-25 14:41:49 - Finished tweetstojekyll.exe
