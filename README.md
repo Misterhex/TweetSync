@@ -1,3 +1,3 @@
 blog
 ====
-http://misterhex.github.io/blog/
+http://misterhex.github.io/tweetSync/
